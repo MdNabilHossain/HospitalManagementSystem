@@ -14,6 +14,10 @@ body {
   overflow: hidden;
   color: #fff;
 }
+.head a {
+  text-decoration: none;
+  color: #fff;
+}
 /* .navbar {
   overflow: hidden;
 }
@@ -298,7 +302,7 @@ body {
   text-transform: uppercase;
 }
 .emergency {
-  background: url(1.jpg);
+  background: url(images/1.jpg);
   background-attachment: fixed;
   background-size: cover;
   overflow: hidden;
@@ -308,10 +312,6 @@ body {
 }
 .emergency .inner-content {
   padding: 50px;
-}
-.emergency .inner-content h2,
-h1,
-p {
   text-align: center;
 }
 
@@ -384,12 +384,7 @@ p {
   border-radius: 5px;
   background: #f5bcbc;
 }
-.success {
-  color: #884b4b;
-  border: 1px solid #884b4b;
-  border-radius: 5px;
-  background: #f5bcbc;
-}
+
 /* .error p {
   text-align: center !important;
 } */

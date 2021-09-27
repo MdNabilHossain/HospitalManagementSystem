@@ -1,28 +1,16 @@
-<?php include "controls/Database.php" ?>
+<?php include "../controls/Database.php" ?>
 <?php 
 session_start();
-$db = new Database();
+  $db = new Database();
   if(isset($_POST['submit']))
   {
-    $db->loginRecord($_POST);
-    // $email = $_POST['email'];
-    // if(empty($email)){
-    //   $error_msg['email'] = "Email is required";
-    // }
-    // else if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,10})$/",$email)) {
-    //   $error_msg['email'] = "Invalid email format";
-    // }
-
-    // $password = $_POST['password'];
-    // if(empty($password)){
-    //   $error_msg['password'] = "Password is required";
-    // }
-    // else if((strlen($password)<6)){
-    //   $error_msg['password'] = "Password is too short";
-    // }
-    // else if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $password)){
-    //   $error_msg['password'] = "the password does not meet the requirements";
-    // }
+    $login = $db->loginRecord($_POST,"patients");
+    if($login)
+    {
+      echo "<script>alert('Login succesful');</script>";
+      echo "<script>window.location.href = 'user-home.php';</script>";
+    }
+   
   }
 ?>
 
@@ -32,23 +20,24 @@ $db = new Database();
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Patient Login</title>
+    <link rel="icon" href="../images/hms.svg">
   </head>
   <body>
     <header class="header-area">
       <div class="title">
-        <h1>Hospital Management System</h1>
+        <h1 class="head"><a href="../home.php">Hospital Management System</a> </h1>
       </div>
       <div class="navigation">
         <nav class="menu">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="../home.php">Home</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Service</a></li>
             <li><a href="#">Contact Us</a></li>
@@ -71,7 +60,7 @@ $db = new Database();
 <form action="login.php" method="post">
   <h2 class="form-title">Sign In</h2>
   <?php
-    include "controls/errors.php";
+    include "../controls/errors.php";
     
   ?>
 

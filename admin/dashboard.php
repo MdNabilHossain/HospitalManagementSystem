@@ -1,11 +1,11 @@
-<?php include"../controls/Database.php" ?>
+<?php include "../controls/Database.php" ?>
 
 <?php 
   session_start();
   $db = new Database();
   if(!isset($_SESSION['username']))
   {
-    header("Location:../login.php");
+    header("Location:../views/admin-login.php");
   }
 
 ?>
@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="../css/admin-nav.css" />
     <link rel="stylesheet" href="../css/admin.css" />
 
-    <title>Admin Section - Manage Admin</title>
+    <title>Dashboard</title>
+    <link rel="icon" href="../images/hms.svg">
   </head>
 
   <body>
@@ -69,7 +70,7 @@
         <div class="content">
         <h2 class="page-title">Welcome To Your Dashboard <?php echo $_SESSION['username'];?></h2>
 
-          <table>
+          <!-- <table>
             <thead>
               <th>SN</th>
               <th>Username</th>
@@ -85,7 +86,7 @@
                 <td><a href="#" class="delete">delete</a></td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
         </div>
       </div>
       <!-- // Admin Content -->
